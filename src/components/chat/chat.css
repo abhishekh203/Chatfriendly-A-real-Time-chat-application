@@ -1,0 +1,316 @@
+.chat {
+  flex: 2;
+  border-left: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5;
+  /* Slightly lighter background */
+}
+
+.top {
+  padding: 4px 8px;
+  /* Reduced padding for a smaller height */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #b5dab8;
+  /* Background color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 180px;
+  /* Set a fixed height for the top section */
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user img {
+  width: 35px;
+  /* Slightly larger for better visibility */
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.texts {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.texts span {
+  font-size: 12px;
+  /* Slightly larger for better readability */
+  font-weight: 600;
+  color: #333;
+}
+
+.texts p {
+  font-size: 14px;
+  /* Slightly larger for better readability */
+  font-weight: 300;
+  color: #888;
+}
+
+.icons {
+  display: flex;
+  gap: 16px;
+}
+
+.icons img {
+  width: 20px;
+  /* Larger icons for better usability */
+  height: 20px;
+  cursor: pointer;
+}
+
+.center {
+  padding: 16px;
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.message {
+  max-width: 75%;
+  /* Increased width for better message visibility */
+  display: flex;
+  gap: 12px;
+  align-self: flex-start;
+}
+
+.message.own {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.message img {
+  width: 120px;
+  /* Larger images for better visibility */
+  height: 120px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.texts {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.texts img {
+  width: 100%;
+  max-height: 200px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.texts p {
+  padding: 12px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  word-wrap: break-word;
+}
+
+.texts span {
+  font-size: 12px;
+  color: #666;
+}
+
+.bottom {
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #e0e0e0;
+  gap: 16px;
+  background-color: #ffffff;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.icons {
+  display: flex;
+  gap: 16px;
+}
+
+.icons img {
+  width: 20px;
+  /* Larger icons for better usability */
+  height: 20px;
+  cursor: pointer;
+}
+
+input {
+  flex: 1;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  outline: none;
+  color: #333;
+  padding: 12px;
+  border-radius: 16px;
+  font-size: 14px;
+}
+
+input:disabled {
+  cursor: not-allowed;
+  background-color: #f5f5f5;
+}
+
+.emoji {
+  position: relative;
+}
+
+.picker {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+}
+
+.sendButton {
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.sendButton:disabled {
+  background-color: #007bffb3;
+  cursor: not-allowed;
+}
+
+/* Media Queries for Small Devices */
+@media (max-width: 768px) {
+  .top {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 8px;
+  }
+
+  .user img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .texts span {
+    font-size: 11px;
+  }
+
+  .texts p {
+    font-size: 13px;
+  }
+
+  .icons {
+    gap: 12px;
+  }
+
+  .icons img {
+    width: 16px;
+    height: 16px;
+  }
+
+  .center {
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .message {
+    max-width: 85%;
+    gap: 8px;
+  }
+
+  .message img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .texts p {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .bottom {
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+  }
+
+  input {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .sendButton {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .top {
+    padding: 4px;
+  }
+
+  .user img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .texts span {
+    font-size: 10px;
+  }
+
+  .texts p {
+    font-size: 12px;
+  }
+
+  .center {
+    padding: 4px;
+    gap: 4px;
+  }
+
+  .message {
+    max-width: 90%;
+    gap: 4px;
+  }
+
+  .message img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .texts p {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  .bottom {
+    padding: 6px;
+  }
+
+  input {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  .sendButton {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+
+  .icons img {
+    width: 14px;
+    height: 14px;
+  }
+}
